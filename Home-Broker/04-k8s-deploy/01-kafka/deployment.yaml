@@ -122,5 +122,6 @@ spec:
     app: control-center
   type: NodePort
   ports:
-  - port: <Port>
-    targetPort: <Target Port>
+  - port: 9021
+    targetPort: 9021
+    NodePort: 30002
