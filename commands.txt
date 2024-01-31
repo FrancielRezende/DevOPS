@@ -1,0 +1,7 @@
+
+
+
+
+
+#create a deployment using a -R recursive option to find every file.yaml in the folder 
+kubectl apply -f . -R
