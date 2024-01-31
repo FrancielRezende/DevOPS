@@ -125,4 +125,4 @@ spec:
   ports:
   - port: 9021
     targetPort: 9021
-    NodePort: 30002
+    nodePort: 30002
