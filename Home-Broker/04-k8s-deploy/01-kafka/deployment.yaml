@@ -64,7 +64,7 @@ spec:
           value: "1"
         - name: KAFKA_ZOOKEEPER_CONNECT
           value: 'zookeeper-service:2181'
-        - name: KAFKA_LISTENER_SECURITY_PORTOCOL_MAP
+        - name: KAFKA_LISTENER_SECURITY_PROTOCOL_MAP
           value: PLAINTEXT:PLAINTEXT,PLAINTEXT_INTERNAL:PLAINTEXT
         - name: KAFKA_ADVERTISED_LISTENERS
           value: PLAINTEXT://:29092,PLAINTEXT_INTERNAL://kafka-service:9092
@@ -96,7 +96,7 @@ spec:
     matchLabels:
       app: control-center
   template:
-    metadata:
+    metadata: 
       labels:
         app: control-center
     spec:
@@ -120,9 +120,9 @@ metadata:
 spec:
   selector:
     app: control-center
-  type: LoadBalancer
-  #type: NodePort
+  #type: LoadBalancer
+  type: NodePort
   ports:
-  - port: 80
+  - port: 9021
     targetPort: 9021
-    #NodePort: 30002
+    NodePort: 30002
