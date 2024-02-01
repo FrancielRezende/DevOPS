@@ -120,9 +120,9 @@ metadata:
 spec:
   selector:
     app: control-center
-  #type: LoadBalancer
   ports:
   - port: 9021
     targetPort: 9021
-    nodePort: 30002
-  type: NodePort
+  type: LoadBalancer  
+    # nodePort: 30002
+  # type: NodePort
