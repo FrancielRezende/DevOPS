@@ -19,8 +19,8 @@ spec:
         env:
         - name: TRADER_API_URL
           value: "api:80"
-#        - name: NEXT_PUBLIC_NEST_URL
-#          value: "localhost:3000"
+        - name: NEXT_PUBLIC_NEST_URL
+          value: "192.168.100.174:3000"
         - name: NEXT_PUBLIC_NEST_URL_API
           value: "192.168.100.174:3001"
 ---
