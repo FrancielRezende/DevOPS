@@ -123,6 +123,6 @@ spec:
   ports:
   - port: 9021
     targetPort: 9021
-  type: LoadBalancer  
-    # nodePort: 30002
-  # type: NodePort
+  # type: LoadBalancer  
+    nodePort: 30002
+  type: NodePort
