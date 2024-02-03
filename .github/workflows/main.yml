@@ -24,7 +24,10 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USR }} 
           # Password or personal access token used to log against the Docker registry
           password: ${{ secrets.DOCKERHUB_PWD }}
-          
+      - name: Build and push Docker images
+        uses: docker/build-push-action@v5.1.0
+        # with:
+          # context: 
       - name: step3
         run: echo "Push the images to the repository (Docker HUB"
   CD:
