@@ -1,0 +1,5 @@
+
+
+#RUN A DOCKER IMAGE ON ITERATIVE MODE AND SHARE A FOLDER WITH THE INSTANCE
+docker run -i -t -v /folder:/folder image:version
+docker run -i -t -v /tmp/shared:/shared ubuntu:16.04
