@@ -1,4 +1,20 @@
+#CHECK EXISTING CONTAINERS INCLUDING STOPPED ONES
+docker ps -a
 
+#BUILD AN IMAGE FROM USING A DOCKERFILE
+docker build -t francielrezende/teste:v1 .
+
+#CHECK EXISTING IMAGES
+docker image ls
+
+#CREATE A NETWORK FOR DOCKER
+docker network create networkname
+
+#CHECK EXISTING NETWORKS
+docker network ls
+
+#CLEAN YOU ENVIRONMENT
+docker system prune
 
 #RUN A DOCKER IMAGE ON ITERATIVE MODE AND SHARE A FOLDER WITH THE INSTANCE
 docker run -i -t -v /folder:/folder image:version
@@ -9,3 +25,28 @@ docker cp /folder/file container_id:/folder/file
 
 #COPY FILE FROM CONTAINER TO HOST
 docker cp container_id:/folder/file /folder/file
+
+#START A CONTAINER WITH PORT REDIRECT AND MOUNTING A FOLDER
+docker run -d -p 8080:80 -v /var/www/html:/usr/local/apache2/htdocs httpd
+
+#INIT DOCKER SWARM CLUSTER
+docker swarm init --advertise-addr "host IP"
+
+#COPY THE COMMAND GENERETAD AFTER SWARM INIT
+docker swarm join --token "TOKEN" "HOST IP":2377
+
+#SHOW NODES
+docker node ls
+
+#SHOW SERVICES
+docker service ls
+
+#SHOW SERVICE INFO ON THE CLUSTER
+docker service ps "service name"
+
+#SERVICE CREATE
+docker service create --name "service name" --publish "from port":"to port" "container image"
+docker service create --name demo --publish 80:80 nginx
+
+#SCALE UP SERVICES
+docker service scale "service name"="amount"
