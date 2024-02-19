@@ -4,6 +4,9 @@ docker ps -a
 #BUILD AN IMAGE FROM USING A DOCKERFILE
 docker build -t francielrezende/teste:v1 .
 
+#CHAGING IMAGE TAG
+docker image tag SOURCE_IMAGE:TAG NEW_IMAGE_NAME:NEW_TAG
+
 #CHECK EXISTING IMAGES
 docker image ls
 
