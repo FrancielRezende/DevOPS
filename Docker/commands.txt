@@ -53,3 +53,6 @@ docker service create --name demo --publish 80:80 nginx
 
 #SCALE UP SERVICES
 docker service scale "service name"="amount"
+
+#GIVE PERMISSION TO A NON-ROOT USER RUNS DOCKER COMMANDS
+sudo usermod -aG docker "USER_NAME"
