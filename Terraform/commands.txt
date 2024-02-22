@@ -1,0 +1,13 @@
+#INSTALL TERRAFORM WINDOWS
+1 - download terraform file from official website
+2 - extract the file in C:\windows\system32
+3 - register a new line in the PATH environment variable like this: C:\windows\system32\terraform\
+4 - run command to check version
+
+#STANDARDS
+FILE NAME       PURPOSE
+main.tf         Main configuration file containing resource definition
+variables.tf    Contains variable declarations
+outputs.tf      Contains outputs from resources
+provider.tf     Contains provider definition
+
