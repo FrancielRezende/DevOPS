@@ -26,6 +26,9 @@ docker system prune
 docker run -i -t -v /folder:/folder image:version
 docker run -i -t -v /tmp/shared:/shared ubuntu:16.04
 
+#CONNECT IN A RUNNING CONTAINER
+docker exec -it container_id bash
+
 #COPY FILE FROM HOST TO CONTAINER
 docker cp /folder/file container_id:/folder/file
 
