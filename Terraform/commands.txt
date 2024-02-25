@@ -11,3 +11,39 @@ variables.tf    Contains variable declarations
 outputs.tf      Contains outputs from resources
 provider.tf     Contains provider definition
 
+#INITIALIZE A TERRAFORM REPO
+terraform init
+
+#SHOW THE PLAN
+terraform plan
+
+#APPLY THE PLAN
+terraform apply
+
+#VALIDADE YOU SYNTAX
+terraform validade
+
+#FORMAT YOUR CODE
+terraform fmt
+
+#PRINT THE CURRENT STATE OF THE INFRASTRUCTURE AND ALL ATTRIBUTES
+terraform show
+
+#PRINT ALL OUTPUT VARIABLES
+terraform output #OPTIONAL_VARIABLE_NAME
+
+#UPDATE TERRAFORM STATE FOR CHANGES THAT HAVE BEEN MADE OUTSIDE TERRAFORM
+terraform refresh
+
+#SHOT THE PROVIDERS THAT ARE BEEN USED
+terraform providers
+
+#COPY PROVIDERS TO ANOTHER DIRECTORY
+terraform providers mirror /folder/project_folder
+
+#GENERATE A INFRASTRUCTURE GRAPHIC
+terraform graph
+#YOU CAN INSTALL A SOFTWARE TO BETTER SEE THE GRAPHIC LIKE THIS
+apt update
+apt install -y graphviz
+terraform graph | dot -Tsvg > graph.svg
