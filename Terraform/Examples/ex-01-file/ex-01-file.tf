@@ -1,8 +1,11 @@
 #EXAMPLE https://registry.terraform.io/providers/hashicorp
 resource "local_file" "pet" {
   filename        = "/temp/pets.txt"
-  content         = "We love pets!"
+  content         = "We love pets!!"
   file_permission = "0700"
+  lifecycle {
+    create_before_destroy = true
+  }
 }
 
 resource "local_file" "pet_id" {
@@ -11,6 +14,10 @@ resource "local_file" "pet_id" {
   depends_on = [
     random_pet.my-pet
   ]
+  lifecycle {
+    #IT DOES NOT BLOCK THE RESOURCE TO BE DELETE FROM TERRAFORM DESTROY
+    prevent_destroy = true
+  }
 }
 output "pet-id-gem" {
   value       = random_pet.my-pet.id
