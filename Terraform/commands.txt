@@ -29,6 +29,16 @@ terraform fmt
 #PRINT THE CURRENT STATE OF THE INFRASTRUCTURE AND ALL ATTRIBUTES
 terraform show
 
+#TERRAFORM STATE OPTIONS FROM A FILE
+terraform state show [option] [resource_address]
+terraform state list [option] [resource_address]
+terraform state mv [option] [source] [destination]
+terraform state pull [option] [source] [destination]
+terraform state rm [resource_address]
+
+#RENAME RESOURCES IN A TFSTATE FILE
+terraform state mv aws_dynamodb_table.state-lock aws_dynamodb_table.state-locking
+
 #PRINT ALL OUTPUT VARIABLES
 terraform output #OPTIONAL_VARIABLE_NAME
 
