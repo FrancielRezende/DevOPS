@@ -26,9 +26,19 @@ terraform validade
 #FORMAT YOUR CODE
 terraform fmt
 
+#ALLOW US TO TEST CONVERSIONS, FUNCTIONS, ETC
+terraform console
+
 #PRINT THE CURRENT STATE OF THE INFRASTRUCTURE AND ALL ATTRIBUTES
 terraform show
 
+#DONWLOAD MODULE FROM REGISTRY, AFTER SPECIFY THE MODULE IN TF FILE
+terraform get
+
+#WORKSPACE COMMANDS
+terraform workspace new name
+terraform workspace list
+terraform workspace select name
 #TERRAFORM STATE OPTIONS FROM A FILE
 terraform state show [option] [resource_address]
 terraform state list [option] [resource_address]
@@ -41,6 +51,9 @@ terraform state mv aws_dynamodb_table.state-lock aws_dynamodb_table.state-lockin
 
 #PRINT ALL OUTPUT VARIABLES
 terraform output #OPTIONAL_VARIABLE_NAME
+
+#IMPORT RESOURCES TO BE MANAGED BY TERRAFORM
+terraform import <resource_type>.<resource_name> <attribute>
 
 #UPDATE TERRAFORM STATE FOR CHANGES THAT HAVE BEEN MADE OUTSIDE TERRAFORM
 terraform refresh
@@ -57,3 +70,16 @@ terraform graph
 apt update
 apt install -y graphviz
 terraform graph | dot -Tsvg > graph.svg
+
+#ABOUT LOGS
+export TF_LOG=<log_level>
+export TF_LOG=INFO
+export TF_LOG=WARNING
+export TF_LOG=ERROR
+export TF_LOG=DEBUG
+export TF_LOG=TRACE
+
+#EXPORT TO A FILE
+export TF_LOG_PATH="PATH"
+
+aws ec2 create-key-pair --endpoint http://aws:4566 --key-name jade --query 'KeyMaterial' --output text > /root/terraform-projects/project-jade/jade.pem

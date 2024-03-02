@@ -10,3 +10,7 @@ aws iam add-user-to-group --group-name 'project-sapphire-developers' --user-name
 
 aws iam list-attached-user-policies --user-name 'user_name' --endpoint http://aws:4566
 aws iam list-attached-group-policies --group-name 'project-sapphire-developers' --endpoint http://aws:4566
+
+#LIST ALL EC2 INSTANCES
+aws ec2 describe-instances
+https://www.middlewareinventory.com/blog/aws-cli-ec2/
