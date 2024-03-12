@@ -1,3 +1,8 @@
+#IMPORTANT LINKS
+https://developer.hashicorp.com/terraform/language
+https://registry.terraform.io/browse/modules
+https://registry.terraform.io/browse/providers
+
 #INSTALL TERRAFORM WINDOWS
 1 - download terraform file from official website
 2 - extract the file in C:\windows\system32
@@ -14,11 +19,17 @@ provider.tf     Contains provider definition
 #INITIALIZE A TERRAFORM REPO
 terraform init
 
-#SHOW THE PLAN
+#SHOW THE PLAN / SAVE PLAN IN A FILE
 terraform plan
+terraform plan -out file.out
 
-#APPLY THE PLAN
+#APPLY THE PLAN / AUTO APPROVE
 terraform apply
+terraform apply -auto-approve
+
+#DESTROY / AUTO APPROVE
+terraform destroy
+terraform destroy -auto-approve
 
 #VALIDADE YOU SYNTAX
 terraform validade
@@ -29,8 +40,9 @@ terraform fmt
 #ALLOW US TO TEST CONVERSIONS, FUNCTIONS, ETC
 terraform console
 
-#PRINT THE CURRENT STATE OF THE INFRASTRUCTURE AND ALL ATTRIBUTES
+#PRINT THE CURRENT STATE OF THE INFRASTRUCTURE AND ALL ATTRIBUTES / SHOW INFO FROM FILE
 terraform show
+terraform show file.out
 
 #DONWLOAD MODULE FROM REGISTRY, AFTER SPECIFY THE MODULE IN TF FILE
 terraform get
