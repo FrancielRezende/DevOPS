@@ -1,0 +1,13 @@
+#CONNECT TO AZURE ACCOUNT
+Connect-AzAccount
+
+#INSTALL POWERSHELL AZ MODULE
+Get-Module -Name AzureRM -ListAvailable
+Get-ExecutionPolicy -List
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -force
+Get-ExecutionPolicy -List
+Install-Module -Name Az -Repository PSGallery -Force
+import-module -name az
+
+#GET AZURE STORAGE ACCOUNTS
+get-azstorageaccount
