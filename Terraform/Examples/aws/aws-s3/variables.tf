@@ -4,7 +4,7 @@ variable "region" {
 variable "tags" {
   type = map(string)
   default = {
-    owner          = "Franciel"
+    owner          = "franciel"
     created_by     = "terraform"
     lab            = "terraform-from-basic-to-advanced"
     can_be_deleted = "yes"

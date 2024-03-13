@@ -1,7 +1,7 @@
 variable "tags" {
   type = map(string)
   default = {
-    owner          = "Franciel"
+    owner          = "franciel"
     created_by     = "terraform"
     lab            = "terraform-from-basic-to-advanced"
     can_be_deleted = "yes"
@@ -30,4 +30,12 @@ variable "storage_container_name" {
 variable "location" {
   type    = string
   default = "East US 2"
+}
+variable "container_access_type" {
+  type    = string
+  default = "private"
+}
+variable "versioning_enabled" {
+  type    = string
+  default = "Enabled"
 }
