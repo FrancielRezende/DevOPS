@@ -7,10 +7,10 @@ terraform {
     }
   }
   backend "azurerm" {
-    resource_group_name  = "franciel-rg"
-    storage_account_name = "francielremotestaterepo"
-    container_name       = "franciel-sc"
-    key                  = "azure-vm/terraform.tfstate"
+    resource_group_name  = "terraform-remote-state-rg"
+    storage_account_name = "terraformremotestaterepo"
+    container_name       = "terraform-remote-state-sc"
+    key                  = "azure-vnet/terraform.tfstate"
   }
 }
 provider "azurerm" {
@@ -19,9 +19,9 @@ provider "azurerm" {
 data "terraform_remote_state" "vnet" {
   backend = "azurerm"
   config = {
-    resource_group_name  = "franciel-rg"
-    storage_account_name = "francielremotestaterepo"
-    container_name       = "franciel-sc"
+    resource_group_name  = "terraform-remote-state-rg"
+    storage_account_name = "terraformremotestaterepo"
+    container_name       = "terraform-remote-state-sc"
     key                  = "azure-vnet/terraform.tfstate"
   }
 }
