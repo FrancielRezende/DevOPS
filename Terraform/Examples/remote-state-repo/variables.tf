@@ -17,17 +17,17 @@ variable "az_account_tier" {
   type    = string
   default = "Standard"
 }
-variable "az_storage_account_name" {
-  type    = string
-  default = "francielremotestaterepo"
-}
 variable "az_resource_group_name" {
   type    = string
-  default = "franciel-rg"
+  default = "terraform-remote-state-rg"
+}
+variable "az_storage_account_name" {
+  type    = string
+  default = "terraformremotestaterepo"
 }
 variable "az_storage_container_name" {
   type    = string
-  default = "franciel-sc"
+  default = "terraform-remote-state-sc"
 }
 variable "az_location" {
   type    = string
@@ -50,5 +50,5 @@ variable "aws_versioning_configuration" {
 }
 variable "aws_bucket_name" {
   type    = string
-  default = "francielremotestaterepo"
+  default = "terraformremotestaterepo"
 }
