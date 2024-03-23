@@ -11,7 +11,7 @@ terraform {
     }
   }
   backend "s3" {
-    bucket = "francielremotestaterepo"
+    bucket = "terraformremotestaterepo"
     key    = "aws-vpc/terraform.tfstate"
     region = "us-east-2"
   }

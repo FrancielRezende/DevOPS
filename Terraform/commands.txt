@@ -70,6 +70,9 @@ terraform import <resource_type>.<resource_name> <attribute>
 #UPDATE TERRAFORM STATE FOR CHANGES THAT HAVE BEEN MADE OUTSIDE TERRAFORM
 terraform refresh
 
+#UNLOCK TFSTATE
+terraform force-unlock "ID_returned_from_error_message"
+
 #SHOT THE PROVIDERS THAT ARE BEEN USED
 terraform providers
 
