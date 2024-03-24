@@ -15,7 +15,7 @@ locals {
     protocol                   = "Tcp"
     source_port_range          = "*"
     destination_port_range     = "22"
-    source_address_prefix      = "189.5.164.188/32"
+    source_address_prefix      = "186.207.158.60/32"
     destination_address_prefix = "*"
   }
 }
