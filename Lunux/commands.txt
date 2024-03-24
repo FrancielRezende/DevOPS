@@ -1,0 +1,5 @@
+
+
+#GET A START EXECUTION LOG
+cat /var/log/cloud-init-output.log
+tail -F /var/log/cloud-init-output.log
