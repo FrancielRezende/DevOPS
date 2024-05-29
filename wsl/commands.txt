@@ -1,0 +1,15 @@
+#LIST ALL INSTALLED DISTRIBUTIONS
+wsl -l -v
+
+#LIST ALL ONLINE DISTRIBUTIONS
+wsl --list --online
+
+#REMOVE AN ESPECIFIC DISTRIBUTIONS
+wsl --unregister Ubuntu
+
+#INSTALL AN ESPECIFIC DISTRIBUTIONS
+wsl --install Ubuntu-24.04
+
+#INSTALL SNAP COD
+snap find nextcloud
+snap install code --classic

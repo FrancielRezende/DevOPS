@@ -3,3 +3,12 @@ nginx -v
 
 #LIST VERSION AND ALL CONFIGURED ARGUMENTS
 nginx -v
+
+#TEST NGNIX SYNTAX IN A FILE
+nginx -t
+
+#NGNIX PRIORITIZING ORDER
+1 - Exact match, like: = uri "= /site"
+2 - Preferential prefix match, like: ^~ uri "^~ /site"
+3 - REGEX match, like: ~* uri "~* /site"
+4 - Other prefix matches, like: uri "/site"
