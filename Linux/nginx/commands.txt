@@ -12,3 +12,7 @@ nginx -t
 2 - Preferential prefix match, like: ^~ uri "^~ /site"
 3 - REGEX match, like: ~* uri "~* /site"
 4 - Other prefix matches, like: uri "/site"
+
+#SET NGNIX TO HANDLE WORKERS FOR EACH CPU BY ITSELF, SET A LINE IN THE FILE HEAD
+worker_processes auto;
+

@@ -3,3 +3,10 @@
 #GET A START EXECUTION LOG
 cat /var/log/cloud-init-output.log
 tail -F /var/log/cloud-init-output.log
+
+#GET NUMBER OF CORES
+nproc
+lscpu
+
+#GET HOW MUCH FILES YOU SERVER CAN OPEN PER CPU
+ulimit -n
