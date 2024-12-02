@@ -1,0 +1,129 @@
+# DEFAULT UBUNTU CONFIGURATION
+
+vi /etc/default/grub
+
+# ADD THESE LINES TO DISABLE IPV6
+
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash ipv6.disable=1"
+GRUB_CMDLINE_LINUX="ipv6.disable=1"
+
+# RUN THE COMMAND BELLOW
+
+update-grub && reboot
+
+timedatectl set-timezone America/Sao_Paulo
+
+apt-get update -y && apt-get upgrade -y
+
+# INSTALL MONGO
+sudo apt-get install gnupg curl ca-certificates
+
+
+
+ScGfkyJas1InVmCPpiB67XVj6Yw9tdegksVdsJuDIRo2yvUuRqDiKaf9bruXsSiruZKGyUuwxwiGpd3gHBGzlkS20l1hFpX6
+
+e48f6144275f83b1aae1047ae33a52af56f8888cfafe302fb3d387b67ecfeefd
+
+# GET PASSWORD AFTER INSTALLATION
+tail -30 /var/log/graylog-server/server.log
+
+
+
+
+
+    1  vi /etc/default/grub
+    2  update-grub
+    3  ip a
+    4  cat /proc/sys/net/ipv6/conf/all/disable_ipv6
+    5  echo "1" /proc/sys/net/ipv6/conf/all/disable_ipv6
+    6  cat /proc/sys/net/ipv6/conf/all/disable_ipv6
+    7  echo 1 >> /proc/sys/net/ipv6/conf/all/disable_ipv6
+    8  cat /proc/sys/net/ipv6/conf/all/disable_ipv6
+    9  echo 0 >> /proc/sys/net/ipv6/conf/all/disable_ipv6
+   10  cat /proc/sys/net/ipv6/conf/all/disable_ipv6
+   11  reboot
+   12  cat /proc/sys/net/ipv6/conf/all/disable_ipv6
+   13  update-grub && reboot
+   14  date
+   15  timedatectl set-timezone America/Sao_Paulo
+   16  date
+   17  apt-get update -y && apt-get upgrade -y
+   18  sudo apt-get install gnupg curl
+   19  sudo apt-get install gnupg curl ca-certificates
+   20  curl -fsSL https://www.mongodb.org/static/pgp/server-6.0.asc |    sudo gpg -o /usr/share/keyrings/mongodb-server-6.0.gpg    --dearmor
+   21  echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-6.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
+   22  apt-get update -y
+   23  sudo apt-get install -y mongodb-org=6.0.0 mongodb-org-database=6.0.0 mongodb-org-server=6.0.0 mongodb-mongosh mongodb-org-mongos=6.0.0 mongodb-org-tools=6.0.0
+   24  apt install mongodb-org
+   25  echo "mongodb-org hold" | sudo dpkg --set-selections
+   26  echo "mongodb-org-database hold" | sudo dpkg --set-selections
+   27  echo "mongodb-org-server hold" | sudo dpkg --set-selections
+   28  echo "mongodb-mongosh hold" | sudo dpkg --set-selections
+   29  echo "mongodb-org-mongos hold" | sudo dpkg --set-selections
+   30  echo "mongodb-org-tools hold" | sudo dpkg --set-selections
+   31  systemctl enable mongod
+   33  systemctl start mongod
+   34  systemctl status mongod
+   35  curl -o- https://artifacts.opensearch.org/publickeys/opensearch.pgp | gpg --import -
+   36  curl -o- https://artifacts.opensearch.org/publickeys/opensearch.pgp | sudo gpg --dearmor --batch --yes -o /usr/share/keyrings/opensearch-keyring
+   37  echo "deb [signed-by=/usr/share/keyrings/opensearch-keyring] https://artifacts.opensearch.org/releases/bundle/opensearch/2.x/apt stable main" | sudo tee /etc/apt/sources.list.d/opensearch-2.x.list
+   38  apt-get update -y
+   39  sudo apt list -a opensearch
+   40  sudo OPENSEARCH_INITIAL_ADMIN_PASSWORD='4Xt4E{pr%st;' apt-get -y install opensearch=2.12.0
+   41  sudo apt-mark hold opensearch
+   42  vi /etc/opensearch/opensearch.yml
+   43  vi /etc/opensearch/jvm.options
+   44  sudo sysctl -w vm.max_map_count=262144
+   45  echo 'vm.max_map_count=262144' | sudo tee -a /etc/sysctl.conf
+   46  sudo systemctl daemon-reload
+   47  sudo systemctl enable opensearch.service
+   48  sudo systemctl start opensearch.service
+   49  sudo systemctl status opensearch.service
+   50  wget https://packages.graylog2.org/repo/packages/graylog-6.0-repository_latest.deb
+   51  sudo dpkg -i graylog-6.0-repository_latest.deb
+   52  sudo apt-get update
+   53  sudo apt-get install graylog-server
+   54  vi /etc/graylog/server/server.conf
+   55  sed -i "/password_secret =/ s/\$/$(head /dev/urandom | tr -dc A-Z-a-z-0-9 | head -c${1:-96} | xargs)/" /etc/graylog/server/server.conf
+   56  echo -n "Enter Password: " && head -1 </dev/stdin | tr -d '\n' | sha256sum | cut -d" " -f1
+   57  vi /etc/graylog/server/server.conf
+   58  sudo systemctl daemon-reload
+   59  sudo systemctl enable graylog-server.service
+   60  sudo systemctl start graylog-server.service
+   61  sudo systemctl --type=service --state=active | grep graylog
+   62  sudo systemctl status graylog-server.service
+   63  ip a
+   64  ip addr show
+   65  reboot
+   66  systemctl status elasticsearch
+   67  systemctl status elastic
+   68  sudo sed -i 's/#http_bind_address = 127.0.0.1.*/http_bind_address = 0.0.0.0:9000/g' /etc/graylog/server/server.conf
+   69  sudo systemctl daemon-reload
+   70  sudo systemctl enable graylog-server.service
+   71  sudo systemctl start graylog-server.service
+   72  sudo systemctl --type=service --state=active | grep graylog
+   73  systemctl status graylog
+   74  systemctl status graylog-service
+   75  systemctl status graylog-service.service
+   76  systemctl status graylog-server
+   77  elasticsearch_hosts = http://es-node-1.example.org:9200/foo,https://someuser:somepassword@es-node-2.example.org:9200
+   78  systemctl status graylog-server
+   79  vi /etc/graylog/server/server.conf
+   80  sudo sed -i 's/#http_bind_address = 127.0.0.1.*/http_bind_address = 0.0.0.0:9000/g' /etc/graylog/server/server.conf
+   81  vi /etc/graylog/server/server.conf
+   82  sudo systemctl daemon-reload
+   83  sudo systemctl enable graylog-server.service
+   84  sudo systemctl start graylog-server.service
+   85  sudo systemctl --type=service --state=active | grep graylog
+   86  systemctl status graylog-server
+   87  vi /etc/opensearch/opensearch.yml
+   88  sudo sysctl -w vm.max_map_count=262144
+   89  echo 'vm.max_map_count=262144' | sudo tee -a /etc/sysctl.conf
+   90  sudo systemctl daemon-reload
+   91  sudo systemctl enable opensearch.service
+   92  sudo systemctl start opensearch.service
+   93  sudo systemctl status opensearch.service
+   94  sudo systemctl daemon-reload
+   95  sudo systemctl enable graylog-server.service
+   96  sudo systemctl start graylog-server.service
+   97  sudo systemctl --type=service --state=active | grep graylog
