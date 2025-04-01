@@ -1,0 +1,23 @@
+# COMMANDS TO IMPROVE THE CONTROLLER
+apt-get update; apt-get install ca-certificates curl -y
+
+# SCRIPTS TO CLEAN AND MORE
+curl -sO https://get.glennr.nl/unifi/update/unifi-update.sh && bash unifi-update.sh
+
+# CONFIGURATION FILE LOCATION AND CONTENT
+/usr/lib/unifi/data/system.properties
+
+reporter-uuid=0bbe8d62-6763-440e-b612-550e77839ea0
+unifi.xms=12228
+inform.num_thread=400
+debug.mgmt=warn
+debug.setting_preference=auto
+unifi.xmx=12228
+is_default=false
+uuid=0891bf9e-3f7f-4979-9c3d-6923aa106029
+unifi.G1GC.enabled=true
+debug.device=warn
+db.mongo.wt.cache_size=1024
+debug.system=warn
+inform.max_keep_alive_requests=200
+debug.sdn=warn

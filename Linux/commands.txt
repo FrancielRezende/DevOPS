@@ -1,3 +1,10 @@
+#GET DNS INFO FROM LINUX
+cat /etc/resolv.conf
+cat /etc/network/interfaces
+nmcli device status
+nm-tool | grep DNS
+systemd-resolve --status | grep "DNS Servers"
+
 
 
 #GET A START EXECUTION LOG
