@@ -16,3 +16,8 @@ nginx -t
 #SET NGNIX TO HANDLE WORKERS FOR EACH CPU BY ITSELF, SET A LINE IN THE FILE HEAD
 worker_processes auto;
 
+#INSTALL TOOLS FOR BASIC AUTH
+apt-get install apache2-utils
+
+#COMMAD TO CREATE A USER, ONCE YOU RUN THIS COMMAND YOU WILL BE ASKED FOR A PASSWORD
+htpasswd -c /etc/nginx/.htpasswd user_name
