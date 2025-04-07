@@ -9,6 +9,11 @@ https://registry.terraform.io/browse/providers
 3 - register a new line in the PATH environment variable like this: C:\windows\system32\terraform\
 4 - run command to check version
 
+#TO CONFIGURE TERRAFORM TO CONNECT ON AWS RUN THE COMMAND BELOW, AND THEN ENTER YOUR AWS KEY ID AND KEY SECRET
+aws configure --profile terraform 
+
+#THEN CHECK THE CONFIGURATION FILE IN C:\USERS\YOUR_USER\.AWS\credentials
+
 #STANDARDS
 FILE NAME       PURPOSE
 main.tf         Main configuration file containing resource definition
